@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahul Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Jersey+15&family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Victor+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a192f;
+            color: #ccd6f6;
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: #0a192f;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            padding: 0 30px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 25px;
+        }
+
+        nav ul li a {
+            color: #a8b2d1;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: #64ffda;
+        }
+
+        .left {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #64ffda;
+        }
+
+        .firstsection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 120px;
+            padding: 30px;
+            text-align: center;
+            flex-wrap: wrap;
+            min-height: calc(100vh - 80px);
+        }
+
+        .leftsection {
+            width: 100%;
+            max-width: 600px;
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        .leftsection h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #ccd6f6;
+            font-weight: 700;
+        }
+
+        .leftsection p {
+            font-size: 1.1rem;
+            color: #a8b2d1;
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+        .leftsection .btn {
+            padding: 12px 25px;
+            background-color: #64ffda;
+            color: #0a192f;
+            border: 2px solid #64ffda;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            font-weight: 600;
+        }
+
+        .leftsection .btn:hover {
+            background-color: rgba(100, 255, 218, 0.1);
+            color: #64ffda;
+        }
+
+        .rightsection {
+            width: 100%;
+            max-width: 400px;
+            margin-top: 30px;
+        }
+
+        .rightsection img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .rightsection img:hover {
+            transform: translateY(-10px);
+        }
+
+        .purple {
+            color: #64ffda;
+        }
+
+        #element {
+            color: #64ffda;
+            font-size: 1.8rem;
+            font-weight: 600;
+        }
+
+        main hr {
+            border: 0;
+            background: #1e3a8a;
+            height: 1px;
+            margin: 100px auto;
+            width: 80%;
+        }
+
+        .secondsection {
+            max-width: 90%;
+            margin: auto;
+            padding: 30px;
+            text-align: center;
+        }
+
+        .secondsection h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #ccd6f6;
+            font-weight: 700;
+        }
+
+        .secondsection p {
+            font-size: 1.1rem;
+            color: #a8b2d1;
+            margin-bottom: 40px;
+            line-height: 1.8;
+        }
+
+        .secondsection .timeline {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+        }
+
+        .secondsection .timeline-item {
+            margin-bottom: 60px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .secondsection .timeline-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .secondsection .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .timeline-item .date {
+            font-weight: 600;
+            color: #64ffda;
+            margin-bottom: 15px;
+            display: block;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+
+        .timeline-item h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-align: center;
+            color: #ccd6f6;
+            font-weight: 600;
+        }
+
+        .timeline-item p {
+            color: #a8b2d1;
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #0a192f;
+            color: #a8b2d1;
+            padding: 30px;
+            text-align: center;
+            margin-top: 100px;
+            border-top: 1px solid #1e3a8a;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .footer div {
+            margin: 15px;
+        }
+
+        .footer h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #ccd6f6;
+            font-weight: 600;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer ul li {
+            margin: 10px 0;
+        }
+
+        .footer ul li a {
+            color: #a8b2d1;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        .footer ul li a:hover {
+            color: #64ffda;
+        }
+
+        .footer-right {
+            font-size: 1rem;
+            color: #a8b2d1;
+            margin-top: 20px;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                height: auto;
+                padding: 20px;
+            }
+
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 15px 0;
+            }
+
+            .firstsection {
+                flex-direction: column;
+                text-align: center;
+                margin-top: 80px;
+            }
+
+            .leftsection {
+                width: 100%;
+                text-align: center;
+            }
+
+            .leftsection h1 {
+                font-size: 2.5rem;
+            }
+
+            .rightsection {
+                width: 90%;
+                margin-top: 30px;
+            }
+
+            .secondsection .timeline-item {
+                padding: 20px;
+            }
+
+            .footer {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer div {
+                margin: 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .left {
+                font-size: 1.75rem;
+            }
+
+            .leftsection h1 {
+                font-size: 2rem;
+            }
+
+            #element {
+                font-size: 1.5rem;
+            }
+
+            .leftsection .btn {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .timeline-item h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="left">Rahul Portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact Me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section id="home" class="firstsection">
+            <div class="leftsection">
+                <h1>
+                    Hi, My Name Is <span class="purple">Rahul</span>
+                </h1>
+                <p>And I Am A Passionate</p>
+                <p id="element"></p>
+                <div>
+                    <button class="btn">Download Resume</button>
+                    <button class="btn">Visit Github</button>
+                </div>
+            </div>
+            <div class="rightsection">
+                <img src="https://placehold.co/400x400/EEE/31343C" alt="Rahul Image">
+            </div>
+        </section>
+        <hr>
+        <section id="about" class="secondsection">
+            <p class="text-gray">What I Have Done So Far</p>
+            <h1>Work Experience</h1>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="date">2022-2023</span>
+                    <h2>BCA Intern</h2>
+                    <p>
+                        Assisted in the development of a web application using HTML, CSS, and JavaScript.
+                        Gained experience in front-end development and version control with Git.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">2023-2024</span>
+                    <h2>Freelance Web Developer</h2>
+                    <p>
+                        Designed and developed responsive websites for small businesses.  Projects included an e-commerce site and a portfolio website.
+                        Improved skills in client communication and project management.
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <span class="date">2024-Present</span>
+                    <h2>Software Developer (Part-time)</h2>
+                    <p>
+                        Currently working part-time on a team developing a new student management system.
+                        Contributing to both front-end and back-end development using technologies like React and Node.js.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer id="contact">
+        <div class="footer">
+            <div>
+                <h3>Rahul Developer Portfolio</h3>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-right">
+            copyright &#169; 2025 www.rahulsportfolio.com | All Rights Reserved.
+        </div>
+    </footer>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Developer', 'App Developer', 'Programming skill.'],
+            typeSpeed: 50,
+            loop: true
+        });
+
+        document.querySelectorAll('nav ul li a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelectorAll('nav ul li a').forEach(link => {
+                    link.classList.remove('active');
+                });
+
+                this.classList.add('active');
+
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        window.addEventListener('scroll', () => {
+            let currentSectionId = '';
+            document.querySelectorAll('section').forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (window.scrollY >= sectionTop - 100 && window.scrollY < sectionTop + sectionHeight - 100) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+
+            document.querySelectorAll('nav ul li a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').slice(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
